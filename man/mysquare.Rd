@@ -15,3 +15,6 @@ the square of the input vector
 \description{
 Basic square funtion
 }
+\examples{
+mysquare(2)
+}

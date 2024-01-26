@@ -5,7 +5,7 @@
 #' @return the square of the input vector
 #' @export
 #'
-#' @examples
+#' @examples mysquare(2)
 mysquare <- function (x){
   x^2
 }
