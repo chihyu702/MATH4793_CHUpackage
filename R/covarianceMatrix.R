@@ -6,31 +6,20 @@
 #' @export
 #'
 #' @examples
-CovarianceMatrix = function(x){
+CovarianceMatrix <- function(x) {
+  n <- nrow(x)
+  p <- ncol(x)
+  covMatrix <- matrix(0, nrow = p, ncol = p)
 
-  #Number of data sets
-  dataSets =  ncol(x)
-
-  variableNames = colnames(x)
-
-  #Number of data points in each vector
-  numDataPoints = nrow(x)
-
-  #Vector of the Covariance values
-  covarianceVector = vector()
-
-  ##For loops to calculate the covariances of the data sets
-  for (i in 1:dataSets) {
-
-    for(j in 1:dataSets){
-
-      covarianceVector = c(covarianceVector,Covariance(x[,i],x[,j]))
-
+  for (i in 1:p) {
+    for (j in i:p) {
+      xi <- x[, i] - mean(x[, i])
+      xj <- x[, j] - mean(x[, j])
+      covMatrix[i, j] <- sum(xi * xj) / n
+      covMatrix[j, i] <- covMatrix[i, j]  # Exploit symmetry
     }
-
   }
 
-  #Returns the covariance values as a matrix
-  return(matrix(covarianceVector,dataSets,dataSets,TRUE,list(variableNames,variableNames)))
-
+  return(covMatrix)
 }
+

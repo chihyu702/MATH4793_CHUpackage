@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples data <- data.frame(x = rnorm(10), y = rnorm(10)); vectorMean(data)
-vectorMean <- function(x) {
+vectorMean<- function(x) {
   # number of column
   col <- ncol(x)
   # create a vector with numeric element
