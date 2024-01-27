@@ -5,7 +5,7 @@
 #' @return the matrix of the sample correlation
 #' @export
 #'
-#' @examples
+#' @examples data <- data.frame(x = rnorm(10), y = rnorm(10)); corMatrix(data)
 corMatrix <- function(x) {
   # number of row
   nRow <- nrow(x)

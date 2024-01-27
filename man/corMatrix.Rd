@@ -15,3 +15,6 @@ the matrix of the sample correlation
 \description{
 the sample correlation matrix
 }
+\examples{
+data <- data.frame(x = rnorm(10), y = rnorm(10)); corMatrix(data)
+}
