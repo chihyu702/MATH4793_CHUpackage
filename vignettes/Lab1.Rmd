@@ -1,0 +1,133 @@
+---
+title: "Lab1"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Lab1}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+link-citations: TRUE
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4793Chihyu)
+```
+
+# Introduction
+
+This is Lab 1!!
+
+Here to visit my github: <https://github.com/chihyu702/MATH4793_CHUpackage>
+
+Here is the tips to make make package: [Package making](https://canvas.ou.edu/courses/314813/pages/package-making?wrap=1)
+
+# Latex Formula 
+
+## Sample mean:
+
+$$
+\bar{x}_k = \frac{1}{n} \sum_{j=1}^{n} x_{jk} \quad k = 1, 2, \ldots,p
+$$
+
+it computes sample means from the n measurements
+
+## Sample covariance:
+
+$$
+s_{ik}= \frac{1}{n} \sum_{j=1}^{n} (x_{ji} - \bar{x}_i)(x_{jk} - \bar{x}_k) \quad i = 1,2, \ldots, p, \quad k = 1,2, \ldots, p
+$$
+
+it measures the association between the ith and kth variables.
+
+Note: $s_{ik}=s_{ki}$ for all i and k
+
+## Sample correlation:
+
+$$
+r_{ik} = \frac{s_{ik}}{\sqrt{s_{ii}} \cdot \sqrt{s_{kk}}} = \frac{\sum_{j=1}^{n} (x_{ji} - \bar{x}_i)(x_{jk} - \bar{x}_k)}{\sqrt{\sum_{j=1}^{n} (x_{ji} - \bar{x}_i)^2} \sqrt{\sum_{j=1}^{n} (x_{jk} - \bar{x}_k)^2}}
+$$
+
+$$
+i = 1,2, \ldots, p, \quad k = 1,2, \ldots, p
+$$
+
+Note: $s_{ik}=s_{ki}$ for all i and k
+
+## Sample mean vector and covariance matrix:
+
+$$
+\bar{x} = \frac{1}{n} X^\top \mathbf{1}
+$$
+
+$$
+S = \frac{1}{n-1} X^\top \left( I - \frac{1}{n} {11}^\top \right) X
+$$
+
+$$
+S = \begin{bmatrix} s_{11} & s_{12} & \cdots & s_{1p} \\
+\vdots & \vdots & \ddots & \vdots \\
+s_{p1} & s_{p2} & \cdots & s_{pp}
+\end{bmatrix}
+$$
+
+$$
+D^{-1/2} = \begin{pmatrix}\frac{1}{\sqrt{s_{11}}} & 0 & \cdots & 0 \\0 & \frac{1}{\sqrt{s_{22}}} & \cdots & 0 \\\vdots & \vdots & \ddots & \vdots \\0 & 0 & \cdots & \frac{1}{\sqrt{s_{pp}}}\end{pmatrix}
+$$
+
+
+$$
+R = \begin{bmatrix}
+\frac{s_{11}}{\sqrt{s_{11}s_{11}}} & \frac{s_{12}}{\sqrt{s_{11}s_{22}}} & \cdots & \frac{s_{1p}}{\sqrt{s_{11}s_{pp}}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{s_{p1}}{\sqrt{s_{pp}s_{11}}} & \frac{s_{p2}}{\sqrt{s_{pp}s_{22}}} & \cdots & \frac{s_{pp}}{\sqrt{s_{pp}s_{pp}}}
+\end{bmatrix}
+= \begin{bmatrix}
+1 & r_{12} & \cdots & r_{1p} \\
+\vdots & \vdots & \ddots & \vdots \\
+r_{p1} & r_{p2} & \cdots & 1
+\end{bmatrix}
+$$
+
+
+
+Then,
+
+$$
+R = D ^{-1/2}SD^{-1/2}
+$$
+, where $R$ is a $p \times p$ sample correlation matrix and $D^{1/2}$ is a $p \times p$ sample standard deviation matrix
+
+# Example of my function
+
+## Sample mean
+
+```{r}
+vectorMean(T1_2)
+```
+
+## Sample (biased) covariance matrix
+
+```{r}
+covMatrix(T1_2)
+```
+
+## Sample correlation matrix
+
+```{r}
+corMatrix(T1_2)
+```
+
+# Assessment for the course
+
+```{r}
+data.frame(
+  'Assignment group' = c('In-class quiz', 'Assignment', 'Lab', 'Exam 1', 'Exam 2', 'Project', 'Final Exam'), 
+  'weight in percentage' = c('5', '20', '15', '10', '10', '10', '30')
+)
+```

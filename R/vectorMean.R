@@ -1,4 +1,4 @@
-#' vectorMean
+#' the sample mean vector
 #'
 #' @param x a set of quantitative date with multiple vector
 #'
