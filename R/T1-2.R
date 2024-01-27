@@ -4,9 +4,9 @@
 #'
 #' @format A data frame with 41 rows and 3 columns
 #' \describe{
-#'   \item{Density}{Density}
-#'   \item{Machine direction}{Machine direction}
-#'   \item{Cross direction}{Cross direction}
+#'   \item{V1}{Density}
+#'   \item{V2}{Machine direction}
+#'   \item{V3}{Cross direction}
 #'   ...
 #' }
 #' @source text book
