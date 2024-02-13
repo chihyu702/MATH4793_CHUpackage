@@ -1,0 +1,41 @@
+---
+title: "BayesCoin_Part2"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{BayesCoin_Part2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4793Chihyu)
+```
+# Introduction
+This is Bayes Coin Part2!
+
+Here to visit my github: <https://github.com/chihyu702/MATH4793_CHUpackage>
+
+# Task 1 
+
+"bayesPosterior" is a function in the package. Given the Binomial experiment with n trials and y successes, with prior in Beta(alpha, beta). This function will produce a plot that has all three densities on the one axes, p(theta), f(y|theta), and p(theta|y). Moreover, it prints a named list containing Bayesian point and interval estimates (intervals made for a given tail area of a). 
+
+```{r fig.width=6, fig.height=4}
+bayesPosterior (n = 10, y = 4, alpha = 1, beta = 1, a = 0.025)
+```
+
+# Task 2
+"bayesMixture" is a function in the package. Given the Binomial experiment with n trials and y successes mixture prior in Beta(alpha1, beta1) with p and Beta(alpha2, beta2).
+
+This function will produce two plots, one is the mixture prior density, and another is posterior density. Moreover, it prints a named list containing Bayesian point and interval estimates of theta for a given tail area of a
+
+```{r fig.width=6, fig.height=4}
+bayesMixture(n=20, y=12, p=0.3, alpha1=2, beta1=3, alpha2=4, beta2=5, a=0.025)
+```
+
