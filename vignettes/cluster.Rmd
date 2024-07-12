@@ -1,0 +1,52 @@
+---
+title: "cluster"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{cluster}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4793Chihyu)
+```
+
+# Introduction
+This is to learn and test the cluster without using the build-in package
+
+# Cluster = 3, SPECIES
+## default k
+(k=level of unique variables)
+```{r}
+clustertable(df, original=ddt, name = "SPECIES")
+```
+## assigned K
+```{r}
+clustertable(df, original=ddt, k=7, name = "SPECIES")
+```
+
+# Cluster = 5, SPECIES
+```{r}
+clustertable(df, original=ddt, k=5, name = "SPECIES")
+```
+
+# Cluster = 3, RIVER
+```{r}
+clustertable(df, original=ddt, name = "RIVER")
+```
+
+
+# Another data set
+```{r}
+# Remove all the rows that contain one or more NA
+mtbeo=na.omit(mtbe)
+co <- data.frame(distance= mtbe$Distance, SpConduct=mtbe$SpConduct)
+clustertable(co, original=mtbe, name = "MTBE.Detect")
+```
