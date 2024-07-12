@@ -16,3 +16,5 @@ Suggests:
 VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)
+URL: https://github.com/chihyu702/MATH4793_CHUpackage
+BugReports: https://github.com/chihyu702/MATH4793_CHUpackage/issues
