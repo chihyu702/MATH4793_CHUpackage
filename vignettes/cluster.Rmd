@@ -46,7 +46,7 @@ clustertable(df, original=ddt, name = "RIVER")
 # Another data set
 ```{r}
 # Remove all the rows that contain one or more NA
-mtbeo=na.omit(mtbe)
-co <- data.frame(distance= mtbe$Distance, SpConduct=mtbe$SpConduct)
-clustertable(co, original=mtbe, name = "MTBE.Detect")
+# mtbeo=na.omit(mtbe)
+# co <- data.frame(distance= mtbe$Distance, SpConduct=mtbe$SpConduct)
+# clustertable(co, original=mtbe, name = "MTBE.Detect")
 ```
