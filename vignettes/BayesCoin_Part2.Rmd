@@ -39,3 +39,5 @@ This function will produce two plots, one is the mixture prior density, and anot
 bayesMixture(n=20, y=12, p=0.3, alpha1=2, beta1=3, alpha2=4, beta2=5, a=0.025)
 ```
 
+
+
